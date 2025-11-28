@@ -1,10 +1,10 @@
 {
-	"name": "express-typescript-boilerplate",
-	"version": "1.0.14",
-	"description": "An Express boilerplate backend",
-	"author": "Edwin Hernandez",
-	"repository": "edwinhern/express-typescript-2024",
-	"license": "MIT",
+	"name": "todo_sorcery_app",
+	"version": "0.1.0",
+	"description": "A backend for Todo App",
+	"author": "Do Dinh Thy Son",
+	"repository": "",
+	"license": "GPL-3.0-only",
 	"main": "index.ts",
 	"private": true,
 	"scripts": {
