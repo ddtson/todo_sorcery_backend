@@ -1,11 +1,7 @@
-import { defineConfig } from "drizzle-kit";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { env } from "@/common/utils/envConfig";
 
-export default defineConfig({
-	dialect: "postgresql", // 'mysql' | 'sqlite' | 'turso'
-	schema: "./src/db/schema.ts",
-});
+export { users } from "./users";
 
 export const db = drizzle({
 	connection: {
@@ -13,5 +9,3 @@ export const db = drizzle({
 		ssl: true,
 	},
 });
-
-export const result = await db.execute("SELECT 1");
