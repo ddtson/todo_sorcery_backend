@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import type { ZodError, ZodSchema } from "zod";
+import type { ZodError, ZodSchema } from "zod/v3";
 
 import { ServiceResponse } from "@/common/models/serviceResponse";
 
