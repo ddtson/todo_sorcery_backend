@@ -2,7 +2,7 @@ import { extendZodWithOpenApi, OpenAPIRegistry } from "@asteasolutions/zod-to-op
 import express, { type Request, type Response, type Router } from "express";
 import { z } from "zod";
 
-extendZodWithOpenApi(z)
+extendZodWithOpenApi(z);
 
 import { createApiResponse } from "@/api-docs/openAPIResponseBuilders";
 import { ServiceResponse } from "@/common/models/serviceResponse";

@@ -11,5 +11,7 @@
 	"[github-actions-workflow][markdown][xml][yaml]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"workbench.colorCustomizations": {}
+	"workbench.colorCustomizations": {},
+	"editor.defaultFormatter": "biomejs.biome",
+	"notebook.defaultFormatter": "biomejs.biome"
 }
