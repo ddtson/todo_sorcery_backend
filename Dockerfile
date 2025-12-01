@@ -1,7 +1,10 @@
 # Base stage with pnpm setup
-FROM cgr.dev/chainguard/node:latest AS base
+FROM cgr.dev/chainguard/node:latest-glibc AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+
+USER root
+RUN apk add --no-cache corepack
 RUN corepack enable
 WORKDIR /app
 
