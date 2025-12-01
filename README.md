@@ -5,3 +5,10 @@
 ## 🌟 Introduction
 
 This is a Typescript NodeJS Todo backend
+
+## Ideas
+
+Additional middlewares:
+
+- Cookie parser
+- Passport
