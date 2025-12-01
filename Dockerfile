@@ -4,8 +4,6 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 USER root
-RUN apk add --no-cache corepack
-RUN corepack enable
 WORKDIR /app
 
 # Production dependencies stage
