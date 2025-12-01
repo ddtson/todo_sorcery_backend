@@ -1,5 +1,5 @@
 # Base stage with pnpm setup
-FROM cgr.dev/chainguard/node:latest AS base
+FROM cgr.dev/chainguard/node:latest-dev AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
