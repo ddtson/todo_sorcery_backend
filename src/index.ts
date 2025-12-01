@@ -1,5 +1,8 @@
+import { drizzle } from "drizzle-orm/neon-http";
 import { env } from "@/common/utils/envConfig";
 import { app, logger } from "@/server";
+
+export const db = drizzle(env.DATABASE_URL);
 
 const server = app.listen(env.PORT, () => {
 	const { NODE_ENV, HOST, PORT } = env;
