@@ -1,0 +1,3 @@
+- [ ] Using Knex or Dot for database ?
+- [ ] Adding AlpineJS
+- [ ] Obfuscate the current codebase
