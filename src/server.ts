@@ -1,6 +1,8 @@
+import fs from "node:fs";
 import cors from "cors";
 import express, { type Express } from "express";
 import helmet from "helmet";
+import jsrender from "jsrender";
 import { pino } from "pino";
 import { healthCheckRouter } from "@/api/healthCheck/healthCheckRouter";
 import { userRouter } from "@/api/user/userRouter";
@@ -26,7 +28,18 @@ app.use(rateLimiter);
 // Request logging
 app.use(requestLogger);
 
+const temple = jsrender.templates(fs.readFileSync('./templates/index.html', 'utf-8'));
+
 // Routes
+app.get("/", (_req, res) => {
+	const data = {
+		title: "Hello world",
+		message: "This is a server-rendered page using JSRender",
+        name: 'Jim'
+	};
+    const html = temple.render(data)
+	res.send(html)
+});
 app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);
 
