@@ -7,9 +7,10 @@
         <title>JsViews Express App</title>
         <script src="/node_modules/jsviews/jsviews.min.js"></script>
         <script defer src="https://unpkg.com/alpinejs"></script>
+        <link rel="stylesheet" href="./styles/style.css" type="text/css" />
     </head>
     <body>
-        <h2>Hello {{:name}}!</h2>
+        <h2 class="text-red-200">Hello {{:name}}!</h2>
         <ul>
             {{for items}}
             <li>{{:label}}</li>
