@@ -21,20 +21,27 @@ app.set("trust proxy", true);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }));
-app.use(helmet({
-	xContentTypeOptions: false,
-	contentSecurityPolicy: {
-		directives: {
-			'script-src': [ "cdn.jsdelivr.net", "unpkg.com", "'sha256-ZswfTY7H35rbv8WC7NXBoiC7WNu86vSzCDChNWwZZDM='", "'self'"],
+app.use(
+	helmet({
+		xContentTypeOptions: false,
+		contentSecurityPolicy: {
+			directives: {
+				"script-src": [
+					"cdn.jsdelivr.net",
+					"unpkg.com",
+					"'sha256-ZswfTY7H35rbv8WC7NXBoiC7WNu86vSzCDChNWwZZDM='",
+					"'self'",
+				],
+			},
 		},
-	}
-}));
-if (process.env.NODE_ENV !== 'development') {
+	}),
+);
+if (process.env.NODE_ENV !== "development") {
 	app.use(rateLimiter);
 }
 
 // settings
-app.use(express.static("public", {  }));
+app.use(express.static("public", {}));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../views"));
 
@@ -42,8 +49,8 @@ app.set("views", path.join(__dirname, "../views"));
 app.use(requestLogger);
 
 // Routes
-app.get('/', (_req, res) => {
-	res.render('index', { title: 'EJS NodeJS Typescript starter', message: 'Welcome' });
+app.get("/", (_req, res) => {
+	res.render("index", { title: "EJS NodeJS Typescript starter", message: "Welcome" });
 });
 app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);

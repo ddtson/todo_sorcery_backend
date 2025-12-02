@@ -20,13 +20,13 @@ describe("OpenAPI Router", () => {
 			expect(response.body).toEqual(expectedResponse);
 		});
 
-		it("should serve the Swagger UI", async () => {
+		it("should serve the hello world template", async () => {
 			// Act
 			const response = await request(app).get("/");
 
 			// Assert
 			expect(response.status).toBe(StatusCodes.OK);
-			expect(response.text).toContain("swagger-ui");
+			expect(response.text).toContain("Hello world");
 		});
 	});
 });
