@@ -1,4 +1,5 @@
+- [x] Adding AlpineJS
+- [ ] Replace JSViews with EJS
 - [ ] Using Knex or Dot for database ?
-- [ ] Adding AlpineJS
 - [ ] Obfuscate the current codebase
 - [ ] Solving the problem on the existing (old codebase)
