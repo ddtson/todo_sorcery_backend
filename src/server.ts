@@ -28,16 +28,23 @@ app.use(rateLimiter);
 // Request logging
 app.use(requestLogger);
 
-const temple = jsrender.templates(fs.readFileSync('./templates/index.html', 'utf-8'));
+const templ = jsrender.templates(fs.readFileSync('./templates/index.html', 'utf-8'));
 
 // Routes
 app.get("/", (_req, res) => {
 	const data = {
 		title: "Hello world",
 		message: "This is a server-rendered page using JSRender",
-        name: 'Jim'
+        name: 'Jim',
+		items: [{
+			label: 'Hello',
+		}, {
+			label: 'Rabbit',
+		}, {
+			label: 'This is Marry'
+		}]
 	};
-    const html = temple.render(data)
+    const html = templ.render(data)
 	res.send(html)
 });
 app.use("/health-check", healthCheckRouter);
