@@ -9,19 +9,21 @@ RUN apk update && apk add nodejs \
     cairo-dev libjpeg-turbo-dev pango-dev giflib-dev \
     librsvg-dev glib-dev harfbuzz-dev fribidi-dev expat-dev libxft-dev
 
+# Set up pnpm environment variables
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+# Enable corepack (built-in pnpm support in recent node versions)
+RUN corepack enable
+
 WORKDIR /app
 
-# Production dependencies stage
-FROM base AS prod-deps
+# Copy package files and install dependencies
 COPY package.json pnpm-lock.yaml ./
-# Install only production dependencies
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile --ignore-scripts
+# Use Docker cache mounts for faster subsequent builds
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-# Build stage - install all dependencies and build
-FROM base AS build
-COPY package.json pnpm-lock.yaml ./
-# Install all dependencies (including dev dependencies)
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts
+# Copy source code and build the application
 COPY . .
 RUN pnpm run build
 
@@ -31,7 +33,6 @@ FROM cgr.dev/chainguard/wolfi-base:latest AS runner
 RUN apk update && apk add nodejs \
     cairo-dev libjpeg-turbo-dev pango-dev giflib-dev \
     librsvg-dev glib-dev harfbuzz-dev fribidi-dev expat-dev libxft-dev
-
 
 WORKDIR /app
 COPY --from=prod-deps --chown=node:node /app/node_modules ./node_modules
