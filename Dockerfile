@@ -22,6 +22,11 @@ RUN pnpm run build
 
 # Final stage - combine production dependencies and build output
 FROM cgr.dev/chainguard/node:latest AS runner
+
+RUN apk update && apk add nodejs \
+    cairo-dev libjpeg-turbo-dev pango-dev giflib-dev \
+    librsvg-dev glib-dev harfbuzz-dev fribidi-dev expat-dev libxft-dev
+
 WORKDIR /app
 COPY --from=prod-deps --chown=node:node /app/node_modules ./node_modules
 COPY --from=build --chown=node:node /app/dist ./dist
