@@ -4,37 +4,30 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 USER root
-
-RUN apk update && apk add nodejs \
-    cairo-dev libjpeg-turbo-dev pango-dev giflib-dev \
-    librsvg-dev glib-dev harfbuzz-dev fribidi-dev expat-dev libxft-dev
-
-# Enable corepack (built-in pnpm support in recent node versions)
-RUN corepack enable
-
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Production dependencies stage
+FROM base AS prod-deps
 COPY package.json pnpm-lock.yaml ./
-# Use Docker cache mounts for faster subsequent builds
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+# Install only production dependencies
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile --ignore-scripts
 
-# Copy source code and build the application
+# Build stage - install all dependencies and build
+FROM base AS build
+COPY package.json pnpm-lock.yaml ./
+# Install all dependencies (including dev dependencies)
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts
 COPY . .
 RUN pnpm run build
 
 # Final stage - combine production dependencies and build output
 FROM cgr.dev/chainguard/node:latest AS runner
-
 WORKDIR /app
-# Optional: Add tini as a proper init process for signal handling
-# RUN apk update && apk add tini # This requires the -dev image or installing apk tools
+COPY --from=prod-deps --chown=node:node /app/node_modules ./node_modules
+COPY --from=build --chown=node:node /app/dist ./dist
 
-# Copy only production dependencies and compiled code from the build stage
-COPY --from=build /app/package.json ./package.json
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
-
-COPY --from=build /app/dist ./dist
+# Use the node user from the image
+USER node
 
 # Expose port 8080
 EXPOSE 8080
