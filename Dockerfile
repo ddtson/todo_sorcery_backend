@@ -9,10 +9,6 @@ RUN apk update && apk add nodejs \
     cairo-dev libjpeg-turbo-dev pango-dev giflib-dev \
     librsvg-dev glib-dev harfbuzz-dev fribidi-dev expat-dev libxft-dev
 
-# Set up pnpm environment variables
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-
 # Enable corepack (built-in pnpm support in recent node versions)
 RUN corepack enable
 
