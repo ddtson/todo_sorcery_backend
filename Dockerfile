@@ -30,13 +30,15 @@ RUN pnpm run build
 # Final stage - combine production dependencies and build output
 FROM cgr.dev/chainguard/wolfi-base:latest AS runner
 
-RUN apk update && apk add nodejs \
-    cairo-dev libjpeg-turbo-dev pango-dev giflib-dev \
-    librsvg-dev glib-dev harfbuzz-dev fribidi-dev expat-dev libxft-dev
-
 WORKDIR /app
-COPY --from=prod-deps --chown=node:node /app/node_modules ./node_modules
-COPY --from=build --chown=node:node /app/dist ./dist
+# Optional: Add tini as a proper init process for signal handling
+# RUN apk update && apk add tini # This requires the -dev image or installing apk tools
+
+# Copy only production dependencies and compiled code from the build stage
+COPY --from=build /app/package.json ./package.json
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+
+COPY --from=build /app/dist ./dist
 
 # Expose port 8080
 EXPOSE 8080
