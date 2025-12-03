@@ -24,7 +24,7 @@ COPY . .
 RUN pnpm run build
 
 # Final stage - combine production dependencies and build output
-FROM node:20-alpine3.22 AS runner
+FROM cgr.dev/chainguard/node:latest AS runner
 
 WORKDIR /app
 # Optional: Add tini as a proper init process for signal handling
