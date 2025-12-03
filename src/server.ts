@@ -15,9 +15,9 @@ import { env } from "@/common/utils/envConfig";
 const logger = pino({ name: "server start" });
 const app: Express = express();
 const eta = new Eta({
-	views: path.join(__dirname, 'views'),
-	cache: true
-})
+	views: path.join(__dirname, "views"),
+	cache: true,
+});
 
 // Set the application to trust the reverse proxy
 app.set("trust proxy", true);
@@ -53,8 +53,8 @@ app.use(requestLogger);
 
 // Routes
 app.get("/", (_req, res) => {
-	const renderedTemplate = eta.render("index", { message: "Yummy" })
-	res.status(200).send(renderedTemplate)
+	const renderedTemplate = eta.render("index", { message: "Yummy" });
+	res.status(200).send(renderedTemplate);
 });
 app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);
