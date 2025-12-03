@@ -1,5 +1,6 @@
 import path from "node:path";
 import cors from "cors";
+import { Eta } from "eta";
 import express, { type Express } from "express";
 import helmet from "helmet";
 import { pino } from "pino";
@@ -13,6 +14,10 @@ import { env } from "@/common/utils/envConfig";
 
 const logger = pino({ name: "server start" });
 const app: Express = express();
+const eta = new Eta({
+	views: path.join(__dirname, 'views'),
+	cache: true
+})
 
 // Set the application to trust the reverse proxy
 app.set("trust proxy", true);
@@ -42,15 +47,14 @@ if (process.env.NODE_ENV !== "development") {
 
 // settings
 app.use(express.static("public", {}));
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "../views"));
 
 // Request logging
 app.use(requestLogger);
 
 // Routes
 app.get("/", (_req, res) => {
-	res.render("index", { title: "EJS NodeJS Typescript starter", message: "Welcome" });
+	const renderedTemplate = eta.render("index", { message: "Yummy" })
+	res.status(200).send(renderedTemplate)
 });
 app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);
