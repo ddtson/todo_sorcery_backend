@@ -24,7 +24,7 @@ COPY . .
 RUN pnpm run build
 
 # Final stage - combine production dependencies and build output
-FROM cgr.dev/chainguard/node:latest AS runner
+FROM gcr.io/distroless/nodejs24-debian12:latest AS runner
 
 WORKDIR /app
 # Optional: Add tini as a proper init process for signal handling
