@@ -8,7 +8,7 @@
 	"main": "index.ts",
 	"private": true,
 	"scripts": {
-		"build": "tsc && tsup",
+		"build": "tsc && tsdown",
 		"start:dev": "node --import=tsx --watch src/index.ts & pnpm run dev:css",
 		"dev:css": "postcss ./public/styles/tailwind.css -o ./public/styles/style.css -w",
 		"start:prod": "node dist/index.js",
@@ -44,13 +44,13 @@
 		"drizzle-kit": "^0.31.7",
 		"pino-pretty": "13.1.1",
 		"supertest": "7.1.4",
-		"tsup": "8.5.0",
+		"tsdown": "^0.17.0-beta.5",
 		"tsx": "4.20.4",
 		"typescript": "5.9.2",
 		"vite-tsconfig-paths": "5.1.4",
 		"vitest": "4.0.14"
 	},
-	"tsup": {
+	"tsdown": {
 		"entry": [
 			"src/index.ts"
 		],
