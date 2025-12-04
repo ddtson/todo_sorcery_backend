@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Moonwhisper</title>
+        <title>MoonWhisper</title>
         <script defer src="https://unpkg.com/alpinejs"></script>
         <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
         <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/animations.css"> 
@@ -24,7 +24,7 @@
             <div class="container nav-container">
                 <a href="#" class="logo">
                     <div class="logo-icon">M</div>
-                    Moonwhisper
+                    MoonWhisper
                 </a>
                 <ul class="menu">
                     <li><a href="#product">Product</a></li>
@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>Moonwhisper is a<span class="highlight highlight-yellow">task tracking tool for wandering teams</span></h1>
+                        <h1>MoonWhisper is a<span class="highlight highlight-yellow">task tracking tool for wandering teams</span></h1>
                         <p>Meet the system for modern software development</p>
                         <div class="neo-button-group">
                             <a href="#components" class="neo-btn">Start TODO-ing</a>
