@@ -26,7 +26,7 @@ describe("OpenAPI Router", () => {
 
 			// Assert
 			expect(response.status).toBe(StatusCodes.OK);
-			expect(response.text).toContain("Hello world");
+			expect(response.text).toContain("MoonWhisper");
 		});
 	});
 });

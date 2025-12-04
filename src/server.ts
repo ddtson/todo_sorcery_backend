@@ -37,11 +37,7 @@ app.use(
 					"'sha256-ZswfTY7H35rbv8WC7NXBoiC7WNu86vSzCDChNWwZZDM='",
 					"'self'",
 				],
-				"style-src": [
-					"pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev",
-					"cdn.hugeicons.com",
-					"'self'"
-				]
+				"style-src": ["pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev", "cdn.hugeicons.com", "'self'"],
 			},
 		},
 	}),
