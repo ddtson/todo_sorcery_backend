@@ -53,6 +53,9 @@
 		"vite-tsconfig-paths": "5.1.4",
 		"vitest": "4.0.14"
 	},
+	"overrides": {
+		"esbuild": ">=0.25.0"
+	},
 	"tsdown": {
 		"entry": [
 			"src/index.ts"
