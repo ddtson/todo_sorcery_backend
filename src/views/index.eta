@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Todo Sorcery App</title>
+        <title>Moonwhisper</title>
         <script defer src="https://unpkg.com/alpinejs"></script>
         <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
         <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/animations.css"> 
@@ -23,15 +23,16 @@
         <nav class="navbar">
             <div class="container nav-container">
                 <a href="#" class="logo">
-                    <div class="logo-icon">N</div>
-                    Neo-Brutalism
+                    <div class="logo-icon">M</div>
+                    Moonwhisper
                 </a>
                 <ul class="menu">
-                    <li><a href="#typography">Typography</a></li>
-                    <li><a href="#components">Components</a></li>
-                    <li><a href="#layout">Layout</a></li>
-                    <li><a href="#animations">Animations</a></li>
-                    <li><a href="#examples">Examples</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#resource">Resource</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#customer">Customer</a></li>
+                    <li><a href="#now">Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-button">☰</button>
             </div>
@@ -40,11 +41,10 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>Neo-Brutalism <span class="highlight highlight-yellow">CSS Library</span></h1>
-                        <p>A comprehensive showcase of all components and styles for creating stunning neo-brutalist
-                            websites.</p>
+                        <h1>Moonwhisper is a<span class="highlight highlight-yellow">task tracking tool for wandering teams</span></h1>
+                        <p>Meet the system for modern software development</p>
                         <div class="neo-button-group">
-                            <a href="#components" class="neo-btn">Explore Components</a>
+                            <a href="#components" class="neo-btn">Start TODO-ing</a>
                             <a href="#examples" class="neo-btn neo-btn-secondary">View Examples</a>
                         </div>
                     </div>
