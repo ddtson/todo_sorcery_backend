@@ -6,18 +6,18 @@
         <title>Todo Sorcery App</title>
         <script defer src="https://unpkg.com/alpinejs"></script>
         <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/animations.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/components.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/font-face.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/layout.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/main.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/neo-brutalism.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/reset.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/responsive.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/theme-customization.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/typography.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/utitlities.css"> 
-        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/variables.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/animations.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/components.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/font-face.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/layout.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/main.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/neo-brutalism.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/reset.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/responsive.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/theme-customization.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/typography.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/utilities.css"> 
+        <link rel="stylesheet" href="https://pub-8df06e1133a54d06aa617e7bdeeb35b6.r2.dev/styles/variables.css"> 
     </head>
     <body>
         <h1 class="text-red-200"><%= it.message %></h1>
