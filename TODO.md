@@ -1,7 +1,8 @@
 - [x] Adding AlpineJS
 - [x] Replace JSViews with EJS
 - [x] Config CSP
-- [ ] Loading fonts and stylesheet from CDN
-- [ ] Using Objection for database
-- [ ] Solving the problem on the existing problematic old code base
-- [ ] Optimizing docker image
+- [x] Optimizing docker image
+- [x] Loading fonts and stylesheet from CDN
+- [x] Using Objection for database
+- [ ] Add halftone shading
+- [ ] Add ascii art
