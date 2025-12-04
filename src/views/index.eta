@@ -5,11 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Todo Sorcery App</title>
         <script defer src="https://unpkg.com/alpinejs"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css">
         <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/animations.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/components.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/font-face.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/layout.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/main.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/neo-brutalism.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/reset.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/responsive.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/theme-customization.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/typography.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/utitlities.css"> 
+        <link rel="stylesheet" href="https://25929189ec93b597a614683e81569e6a.r2.cloudflarestorage.com/todo-sorcery/styles/variables.css"> 
     </head>
     <body>
         <h1 class="text-red-200"><%= it.message %></h1>
+        <button class="neo-btn">Click Me</button>
         <p>Hello world</p>
     </body>
     </html>
