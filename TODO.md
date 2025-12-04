@@ -1,6 +1,5 @@
 - [x] Adding AlpineJS
 - [x] Replace JSViews with EJS
 - [x] Config CSP
-- [ ] Using Knex or Dot for database ?
-- [ ] Obfuscate the current codebase ?
+- [ ] Using Lit for database
 - [ ] Solving the problem on the existing problematic old code base
