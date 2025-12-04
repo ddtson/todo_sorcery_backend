@@ -1,5 +1,7 @@
 - [x] Adding AlpineJS
 - [x] Replace JSViews with EJS
 - [x] Config CSP
-- [ ] Using Lit for database
+- [ ] Loading fonts and stylesheet from CDN
+- [ ] Using Objection for database
 - [ ] Solving the problem on the existing problematic old code base
+- [ ] Optimizing docker image
