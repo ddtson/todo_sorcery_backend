@@ -6,3 +6,4 @@
 - [x] Using Objection for database
 - [ ] Add halftone shading
 - [ ] Add ascii art
+- [ ] Thinking about splitting into front end and back end
