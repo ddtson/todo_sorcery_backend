@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>MoonWhisper is a<span class="highlight highlight-yellow">task tracking tool for wandering teams</span></h1>
+                        <h1>MoonWhisper is a<span class="highlight highlight-yellow"> task tracking tool for wandering teams</span></h1>
                         <p>Meet the system for modern software development</p>
                         <div class="neo-button-group">
                             <a href="#components" class="neo-btn">Start TODO-ing</a>
