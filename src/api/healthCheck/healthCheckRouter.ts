@@ -13,4 +13,3 @@ export const heatlthCheckPlugin: FastifyPluginAsync = async (fastify, _options) 
 		res.status(serviceResponse.statusCode).send(serviceResponse);
 	});
 };
-

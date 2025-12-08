@@ -5,7 +5,7 @@ import { userService } from "@/api/user/userService";
 interface UserRoute extends RouteGenericInterface {
 	Params: {
 		id: string;
-	}
+	};
 }
 
 class UserController {

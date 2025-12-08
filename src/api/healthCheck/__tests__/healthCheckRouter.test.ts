@@ -5,7 +5,7 @@ describe("Health Check API endpoints", () => {
 	it("GET / - success", async () => {
 		const response = await app.inject({
 			url: "/health-check",
-			method: "GET"
+			method: "GET",
 		});
 		const result = response.json();
 

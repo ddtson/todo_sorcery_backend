@@ -56,7 +56,7 @@ app.register(userRouterPlugin, { prefix: "/users" });
 
 // Error handlers
 app.setErrorHandler((_err, _req, reply) => {
-	reply.status(500).send({ ok: false })
+	reply.status(500).send({ ok: false });
 });
 
 app.register((app, _options, next) => {

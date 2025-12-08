@@ -9,8 +9,8 @@ describe("User API Endpoints", () => {
 		it("should return a list of users", async () => {
 			// Act
 			const response = await app.inject({
-				url: '/users',
-				method: 'GET',
+				url: "/users",
+				method: "GET",
 			});
 			const responseBody = response.json();
 
@@ -32,8 +32,8 @@ describe("User API Endpoints", () => {
 			// Act
 			const response = await app.inject({
 				url: `/users/${testId}`,
-				method: 'GET',
-			})
+				method: "GET",
+			});
 			const responseBody = response.json();
 
 			// Assert
@@ -51,7 +51,7 @@ describe("User API Endpoints", () => {
 			// Act
 			const response = await app.inject({
 				url: `/users/${testId}`,
-				method: 'GET',
+				method: "GET",
 			});
 			const responseBody = response.json();
 
@@ -66,7 +66,7 @@ describe("User API Endpoints", () => {
 			const invalidInput = "abc";
 			const response = await app.inject({
 				url: `/users/${invalidInput}`,
-				method: 'GET',
+				method: "GET",
 			});
 			const responseBody = response.json();
 
