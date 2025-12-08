@@ -9,7 +9,6 @@ import fastify from "fastify";
 import { pino } from "pino";
 import { heatlthCheckPlugin } from "@/api/healthCheck/healthCheckRouter";
 import { userRouterPlugin } from "@/api/user/userRouter";
-// import { openAPIRouter } from "@/api-docs/openAPIRouter";
 import { env } from "@/common/utils/envConfig";
 
 const app = fastify({ logger: true, trustProxy: true });
@@ -54,9 +53,6 @@ app.get("/", (_req, res) => {
 });
 app.register(heatlthCheckPlugin, { prefix: "/health-check" });
 app.register(userRouterPlugin, { prefix: "/users" });
-
-// Swagger UI
-// app.use(openAPIRouter);
 
 // Error handlers
 app.setErrorHandler((_err, _req, reply) => {
