@@ -42,9 +42,6 @@ app.register(helmet, {
 		},
 	},
 });
-if (process.env.NODE_ENV !== "development") {
-	// app.use(rateLimiter);
-}
 
 app.register(fastifyStatic, {
 	root: path.join(__dirname, "public"),
@@ -63,6 +60,15 @@ app.register(heatlthCheckPlugin, { prefix: "/health-check" });
 // app.use(openAPIRouter);
 
 // Error handlers
-// app.use(errorHandler());
+app.setErrorHandler((_err, _req, reply) => {
+	reply.status(500).send({ ok: false })
+});
+
+app.register((app, _options, next) => {
+	app.setErrorHandler((err, _req, _reply) => {
+		throw err;
+	});
+	next();
+});
 
 export { app, logger };
