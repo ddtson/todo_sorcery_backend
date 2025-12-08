@@ -1,13 +1,15 @@
 import { extendZodWithOpenApi, OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
-import express, { type Router } from "express";
+import type { FastifyPluginAsync } from "fastify";
 import { z } from "zod";
 import { GetUserSchema, UserSchema } from "@/api/user/userModel";
 import { createApiResponse } from "@/api-docs/openAPIResponseBuilders";
-import { validateRequest } from "@/common/utils/httpHandlers";
 import { userController } from "./userController";
 
 export const userRegistry = new OpenAPIRegistry();
-export const userRouter: Router = express.Router();
+export const userRouterPlugin: FastifyPluginAsync = async (fastify, _options) => {
+	fastify.get("/", userController.getUsers);
+	fastify.get("/:id", userController.getUser);
+};
 
 extendZodWithOpenApi(z);
 
@@ -20,8 +22,6 @@ userRegistry.registerPath({
 	responses: createApiResponse(z.array(UserSchema), "Success"),
 });
 
-userRouter.get("/", userController.getUsers);
-
 userRegistry.registerPath({
 	method: "get",
 	path: "/users/{id}",
@@ -29,5 +29,3 @@ userRegistry.registerPath({
 	request: { params: GetUserSchema.shape.params },
 	responses: createApiResponse(UserSchema, "Success"),
 });
-
-userRouter.get("/:id", validateRequest(GetUserSchema), userController.getUser);

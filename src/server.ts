@@ -8,7 +8,7 @@ import { Eta } from "eta";
 import fastify from "fastify";
 import { pino } from "pino";
 import { heatlthCheckPlugin } from "@/api/healthCheck/healthCheckRouter";
-// import { userRouter } from "@/api/user/userRouter";
+import { userRouterPlugin } from "@/api/user/userRouter";
 // import { openAPIRouter } from "@/api-docs/openAPIRouter";
 import { env } from "@/common/utils/envConfig";
 
@@ -53,7 +53,7 @@ app.get("/", (_req, res) => {
 	res.status(200).send(renderedTemplate);
 });
 app.register(heatlthCheckPlugin, { prefix: "/health-check" });
-// app.use("/users", userRouter);
+app.register(userRouterPlugin, { prefix: "/users" });
 
 // Swagger UI
 // app.use(openAPIRouter);

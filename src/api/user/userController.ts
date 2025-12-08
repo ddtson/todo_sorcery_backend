@@ -1,15 +1,21 @@
-import type { Request, RequestHandler, Response } from "express";
+import type { FastifyReply, FastifyRequest, RouteGenericInterface } from "fastify";
 
 import { userService } from "@/api/user/userService";
 
+interface UserRoute extends RouteGenericInterface {
+	Params: {
+		id: string;
+	}
+}
+
 class UserController {
-	public getUsers: RequestHandler = async (_req: Request, res: Response) => {
+	public getUsers = async (_req: FastifyRequest<UserRoute>, res: FastifyReply<UserRoute>) => {
 		const serviceResponse = await userService.findAll();
 		res.status(serviceResponse.statusCode).send(serviceResponse);
 	};
 
-	public getUser: RequestHandler = async (req: Request, res: Response) => {
-		const id = Number.parseInt(req.params.id as string, 10);
+	public getUser = async (req: FastifyRequest<UserRoute>, res: FastifyReply<UserRoute>) => {
+		const id = Number.parseInt(req.params.id, 10);
 		const serviceResponse = await userService.findById(id);
 		res.status(serviceResponse.statusCode).send(serviceResponse);
 	};
