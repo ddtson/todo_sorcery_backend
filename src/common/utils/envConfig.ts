@@ -18,8 +18,6 @@ const envSchema = z.object({
 	COMMON_RATE_LIMIT_MAX_REQUESTS: z.coerce.number().int().positive().prefault(1000),
 
 	COMMON_RATE_LIMIT_WINDOW_MS: z.coerce.number().int().positive().prefault(1000),
-
-	DATABASE_URL: z.string(),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);

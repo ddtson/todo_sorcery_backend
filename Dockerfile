@@ -4,6 +4,9 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 USER root
+
+RUN corepack enable
+
 WORKDIR /app
 
 # Production dependencies stage
@@ -33,4 +36,4 @@ USER node
 EXPOSE 8080
 
 # Start the server
-CMD ["node", "dist/index.js"]
+ENTRYPOINT ["node", "./dist/index.js"]
