@@ -4,8 +4,8 @@
 - [x] Optimizing docker image
 - [x] Loading fonts and stylesheet from CDN
 - [x] Using Objection for database
+- [x] Migration from express to fastify
+- [x] Thinking about splitting into front end and back end
 - [ ] SSH to server
-- [ ] Migration from express to fastify
 - [ ] Add halftone shading
 - [ ] Add ascii art
-- [ ] Thinking about splitting into front end and back end
