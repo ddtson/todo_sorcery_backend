@@ -10,7 +10,6 @@ import { pino } from "pino";
 import { heatlthCheckPlugin } from "@/api/healthCheck/healthCheckRouter";
 // import { userRouter } from "@/api/user/userRouter";
 // import { openAPIRouter } from "@/api-docs/openAPIRouter";
-// import errorHandler from "@/common/middleware/errorHandler";
 import { env } from "@/common/utils/envConfig";
 
 const app = fastify({ logger: true, trustProxy: true });
