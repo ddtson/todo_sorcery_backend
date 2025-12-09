@@ -1,7 +1,0 @@
-{
-  "watch": ["src"],
-  "ext": "ts,eta",
-  "execMap": {
-    "ts": "node --require ts-node/register --require tsconfig-paths/register"
-  }
-}

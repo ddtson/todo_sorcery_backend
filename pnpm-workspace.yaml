@@ -1,6 +1,0 @@
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@scarf/scarf'
-  - esbuild
-  - sharp
-  - workerd

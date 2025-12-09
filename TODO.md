@@ -1,9 +1,6 @@
-- [x] Adding AlpineJS
-- [x] Replace JSViews with EJS
-- [x] Config CSP
-- [x] Optimizing docker image
-- [x] Loading fonts and stylesheet from CDN
 - [x] Using Objection for database
 - [x] Migration from express to fastify
 - [x] Thinking about splitting into front end and back end
-- [ ] Upgrade from node to deno
+- [x] Upgrade from node + pnpm to deno
+- [ ] Setup CI with deno
+- [ ] Setup Renovate CI with deno
