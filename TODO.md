@@ -6,6 +6,4 @@
 - [x] Using Objection for database
 - [x] Migration from express to fastify
 - [x] Thinking about splitting into front end and back end
-- [ ] SSH to server
-- [ ] Add halftone shading
-- [ ] Add ascii art
+- [ ] Upgrade from node to deno
