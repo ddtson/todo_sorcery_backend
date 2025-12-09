@@ -42,10 +42,6 @@ app.register(fastifyStatic, {
 });
 
 // Routes
-app.get("/", (_req, res) => {
-	const renderedTemplate = eta.render("index", { message: "Yummy" });
-	res.status(200).send(renderedTemplate);
-});
 app.register(heatlthCheckPlugin, { prefix: "/health-check" });
 app.register(userRouterPlugin, { prefix: "/users" });
 
