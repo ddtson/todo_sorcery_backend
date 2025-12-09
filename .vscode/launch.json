@@ -3,19 +3,13 @@
   "configurations": [
     {
       "name": "Run in Development Mode",
-      "type": "node",
+      "type": "deno",
       "request": "launch",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "console": "integratedTerminal"
     },
     {
       "name": "Run in Production Mode",
-      "type": "node",
+      "type": "deno",
       "request": "launch",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "start"],
-      "console": "integratedTerminal",
       "preLaunchTask": "npm: build"
     }
   ]
