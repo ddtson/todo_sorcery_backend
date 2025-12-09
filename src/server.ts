@@ -4,7 +4,6 @@ import fastifyExpress from "@fastify/express";
 import fastifyFormBody from "@fastify/formbody";
 import helmet from "@fastify/helmet";
 import fastifyStatic from "@fastify/static";
-import { Eta } from "eta";
 import fastify from "fastify";
 import { pino } from "pino";
 import { heatlthCheckPlugin } from "@/api/healthCheck/healthCheckRouter";
@@ -14,10 +13,6 @@ import { env } from "@/common/utils/envConfig";
 const app = fastify({ logger: true, trustProxy: true });
 
 const logger = pino({ name: "server start" });
-const eta = new Eta({
-	views: path.join(__dirname, "views"),
-	cache: true,
-});
 
 // Middlewares
 app.register(fastifyExpress, { expressHook: "preHandler" });
