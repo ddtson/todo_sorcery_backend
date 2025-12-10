@@ -6,9 +6,9 @@ import helmet from '@fastify/helmet';
 import fastifyStatic from '@fastify/static';
 import fastify from 'fastify';
 import { pino } from 'pino';
-import { heatlthCheckPlugin } from '@/api/healthCheck/healthCheckRouter';
-import { userRouterPlugin } from '@/api/user/userRouter';
-import { env } from '@/common/utils/envConfig';
+import { heatlthCheckPlugin } from '@/api/healthCheck/healthCheckRouter.ts';
+import { userRouterPlugin } from '@/api/user/userRouter.ts';
+import { env } from '@/common/utils/envConfig.ts';
 
 const app = fastify({ logger: true, trustProxy: true });
 

@@ -1,8 +1,6 @@
-import { extendZodWithOpenApi } from '@asteasolutions/zod-to-openapi';
+import process from 'node:process';
 import dotenv from 'dotenv';
 import { z } from 'zod';
-
-extendZodWithOpenApi(z);
 
 dotenv.config();
 

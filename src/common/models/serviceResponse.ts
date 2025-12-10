@@ -1,8 +1,5 @@
-import { extendZodWithOpenApi } from '@asteasolutions/zod-to-openapi';
 import { StatusCodes } from 'http-status-codes';
 import { z } from 'zod';
-
-extendZodWithOpenApi(z);
 
 export class ServiceResponse<T = null> {
   readonly success: boolean;
