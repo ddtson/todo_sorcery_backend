@@ -1,21 +1,19 @@
 {
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "@/": "./src/"
+  },
   "compilerOptions": {
-    "target": "ESNext",
     "module": "ESNext",
     "baseUrl": "./src",
-    "paths": {
-      "@/*": ["*"]
-    },
-    "moduleResolution": "Node",
-    "outDir": "dist",
-    "importsNotUsedAsValues": "remove",
+    "moduleResolution": "nodenext",
     "strict": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
     "types": ["vitest/globals"],
     "verbatimModuleSyntax": true,
-    "resolveJsonModule": true,
     "noImplicitAny": false,
     "noImplicitThis": true,
     "strictNullChecks": false
@@ -23,3 +21,4 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
+

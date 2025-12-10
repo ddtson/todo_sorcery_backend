@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "build": "tsc && tsup",
-    "start:dev": "nodemon --exec tsx -r tsconfig-paths/register ./src/index.ts",
+    "start:dev": "deno run -c tsconfig.json --watch './src/index.ts'",
     "start:prod": "node dist/index.js",
     "check": "biome check --write",
     "test": "vitest run",

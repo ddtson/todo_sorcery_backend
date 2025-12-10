@@ -1,5 +1,6 @@
-import { env } from '@/common/utils/envConfig';
-import { app, logger } from '@/server';
+import process from 'node:process';
+import { env } from '@/common/utils/envConfig.ts';
+import { app, logger } from '@/server.ts';
 
 app.listen({ port: env.PORT }, () => {
   const { NODE_ENV, HOST, PORT } = env;
@@ -12,7 +13,7 @@ const onCloseSignal = () => {
     logger.info('server closed');
     process.exit();
   });
-  setTimeout(() => process.exit(1), 10000).unref(); // Force shutdown after 10s
+  setTimeout(() => process.exit(1), 10000); // Force shutdown after 10s
 };
 
 process.on('SIGINT', onCloseSignal);
