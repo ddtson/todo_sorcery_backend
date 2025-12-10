@@ -1,10 +1,42 @@
 {
+  "name": "todo_sorcery_backend",
+  "version": "0.1.0",
+  "exports": "./src/index.ts",
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno run --watch main.ts",
+    "build": "tsc && tsup",
+    "start:dev": "deno run -c tsconfig.json --watch './src/index.ts'",
+    "start:prod": "node dist/index.js",
+    "check": "biome check --write",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
-    "@/": "./src/"
+    "@/": "./src/",
+    "@fastify/cors": "npm:@fastify/cors",
+    "@fastify/express": "npm:@fastify/express",
+    "@fastify/formbody": "npm:@fastify/formbody",
+    "@fastify/helmet": "npm:@fastify/helmet",
+    "@fastify/static": "npm:@fastify/static",
+    "ajv": "npm:ajv",
+    "dotenv": "npm:dotenv",
+    "fastify": "npm:fastify",
+    "http-status-codes": "npm:http-status-codes",
+    "knex": "npm:knex",
+    "objection": "npm:objection",
+    "pg": "npm:pg",
+    "pino": "npm:pino",
+    "pino-http": "npm:pino-http",
+    "prelude-ts": "npm:prelude-ts",
+    "zod": "npm:zod",
+    "@biomejs/biome": "npm:biome",
+    "@types/pg": "npm:@types/pg",
+    "@types/supertest": "npm:@types/supertest",
+    "@vitest/coverage-v8": "npm:@vitest/coverage-v8",
+    "pino-pretty": "npm:pino-pretty",
+    "supertest": "npm:supertest",
+    "vitest": "npm:vitest"
   },
   "compilerOptions": {
     "module": "ESNext",
